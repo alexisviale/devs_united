@@ -1,25 +1,25 @@
 /* import Login from './Login' */
 import './App.css';
-import usePost from './Hooks/usePost'
-import NewPost from '../src/Components/NewPost'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import MainPage from '../src/Pages/MainPage'
+import Register from '../src/Pages/Register'
+import ErrorPage from '../src/Pages/ErrorPage'
+
 
 function App() {
 
-  const [posts] = usePost();
   
-  
-
   return (
-    <div className="App">
-      <NewPost />
-      {posts.map((post) => (
-        <div key={post.id}>
-        <h2>{post.Autor}</h2>
-        <p>{post.Contenido}</p>
-        </div>
-        ))}
-    </div>
-  );
+  
+  <Router>
+    <Routes>
+      <Route path="/" element={<MainPage />}/>
+      <Route path="/register" element={<Register />}/>
+      <Route path="*" element={<ErrorPage />}/>
+    </Routes>
+  </Router>
+  
+  )
 }
 
 export default App;
