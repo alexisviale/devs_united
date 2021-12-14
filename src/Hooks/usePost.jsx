@@ -1,16 +1,19 @@
 import {useEffect, useState} from 'react'
-import { getData } from '../Services/Operaciones'
+import { getSubscription } from '../Services/Operaciones'
 
 const usePost = () => {
 
     const [posts, setPosts] = useState([])
 
-    useEffect( async () => {
-      const newPost = await getData("Posts")
-      const postData = newPost.docs.map((doc) => {
-        return {...doc.data(), id: doc.id}
+    useEffect( () => {
+      const unsubscribe = getSubscription("Posts", (snapData) => {
+        const postData = snapData.docs.map((doc) => {
+          return {...doc.data(), id: doc.id}
+        })
+        setPosts(postData)
       })
-      setPosts(postData)
+
+      return () => unsubscribe()
     }, [])
 
     return [posts, setPosts]

@@ -1,5 +1,5 @@
-import usePost from './Hooks/usePost'
-import NewPost from '../src/Components/NewPost'
+import usePost from '../Hooks/usePost'
+import NewPost from '../Components/NewPost'
 
 const Feed = () => {
 
@@ -17,3 +17,5 @@ const Feed = () => {
       </div>
     )
 }
+
+export default Feed;
