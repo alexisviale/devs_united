@@ -13,7 +13,7 @@ function App() {
   
   <Router>
     <Routes>
-      <Route path="/" element={<MainPage />}/>
+      <Route exact path="/" element={<MainPage />}/>
       <Route path="/register" element={<Register />}/>
       <Route path="/feed" element={<Feed />}/>
       <Route path="*" element={<ErrorPage />}/>

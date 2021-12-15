@@ -1,19 +1,13 @@
-import usePost from '../Hooks/usePost'
 import NewPost from '../Components/NewPost'
+import Posts from '../Components/Posts'
 
 const Feed = () => {
 
-    const [posts] = usePost();
 
     return (
         <div className="App">
         <NewPost />
-        {posts.map((post) => (
-          <div key={post.id}>
-          <h2>{post.Autor}</h2>
-          <p>{post.Contenido}</p>
-          </div>
-          ))}
+        <Posts />
       </div>
     )
 }

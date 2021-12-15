@@ -18,7 +18,7 @@ const NewPost = () => {
 
     const postData = async (e) => {
       e.preventDefault()
-      await addData("Posts", {Autor: newPost.Autor, Contenido: newPost.Contenido})
+      await addData("Posts", {Autor: newPost.Autor, Contenido: newPost.Contenido, date: new Date()})
     }
 
   console.log(newPost);

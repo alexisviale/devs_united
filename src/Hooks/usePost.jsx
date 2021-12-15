@@ -12,7 +12,6 @@ const usePost = () => {
         })
         setPosts(postData)
       })
-
       return () => unsubscribe()
     }, [])
 

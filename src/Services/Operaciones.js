@@ -1,5 +1,5 @@
 import { db } from './firebase'
-import { collection, getDocs, addDoc, onSnapshot, doc } from 'firebase/firestore'
+import { collection, getDocs, addDoc, onSnapshot } from 'firebase/firestore'
 
 // get collection data
 
